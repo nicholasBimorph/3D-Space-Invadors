@@ -1,20 +1,23 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace Assets.Scripts.Interfaces
+﻿namespace Assets.Scripts.Interfaces
 {
     /// <summary>
-    /// A contract for the movement of all space ships
-    /// in the 3D Space Invadors Game.
+    ///     A contract for the movement of all space ships
+    ///     in the 3D Space Invadors Game.
     /// </summary>
     public interface ISpaceShipMove
     {
+        float MaxSpeed { get; set; }
+
         /// <summary>
-        /// Determines how a space ship moves.
+        ///     Determines how a <see cref="ISpaceShip" />
+        ///     moves forward.
         /// </summary>
-        void Move();
+        void Propulsion();
+
+        /// <summary>
+        ///     Determines how a <see cref="ISpaceShip" />
+        ///     navigates and steers.
+        /// </summary>
+        void Steer();
     }
 }
