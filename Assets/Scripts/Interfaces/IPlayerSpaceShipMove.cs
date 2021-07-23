@@ -12,12 +12,5 @@
         /// </summary>
         float MaxSteerSpeed { get; set; }
 
-        /// <summary>
-        /// </summary>
-        float HorizontalAxis { get; set; }
-
-        /// <summary>
-        /// </summary>
-        float VerticalAxis { get; set; }
     }
 }

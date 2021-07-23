@@ -1,18 +1,8 @@
 ﻿namespace Assets.Scripts.Interfaces
 {
-    public interface ISpaceShip
+    public interface ISpaceShip : IGameEntity
     {
-        /// <summary>
-        /// The maximum speed this <see cref="ISpaceShip"/>
-        /// can fly.
-        /// </summary>
-        //  float MaxSpeed { get; set; }
-
-        /// <summary>
-        ///     The health of this <see cref="ISpaceShip" />.
-        /// </summary>
-        int Health { get; set; }
-
+        
         // TODO: Add a collection of IWeapons.
 
         /// <summary>
