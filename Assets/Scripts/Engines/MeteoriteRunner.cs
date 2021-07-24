@@ -6,15 +6,15 @@ namespace Assets.Scripts.Engines
    
 
     /// <summary>
-    /// This <see cref="MeteoriteEngine"/> computes
+    /// This <see cref="MeteoriteRunner"/> computes
     /// the behaviour of all <see cref="IMeteorite"/>'s
     /// in the game.
     /// </summary>
-    public class MeteoriteEngine : IEngine
+    public class MeteoriteRunner : IRunner
     {
         private readonly MeteoritePopulation _meteoritePopulation;
 
-        public MeteoriteEngine(MeteoritePopulation meteoritePopulation)
+        public MeteoriteRunner(MeteoritePopulation meteoritePopulation)
         {
             _meteoritePopulation = meteoritePopulation;
         }

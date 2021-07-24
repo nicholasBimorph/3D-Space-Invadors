@@ -12,18 +12,18 @@ namespace Assets.Scripts.Behaviours
 {
     public class MeteoriteEngineBehaviour: MonoBehaviour
     {
-        private  IEngine _meteoriteEngine;
+        private  IRunner _meteoriteRunner;
 
         public GameObject MeteoritePopulation;
 
         public void Start()
         {
-            _meteoriteEngine = new MeteoriteEngine(MeteoritePopulation.GetComponent<MeteoritePopulation>());
+            _meteoriteRunner = new MeteoriteRunner(MeteoritePopulation.GetComponent<MeteoritePopulation>());
         }
 
         public void Update()
         {
-            _meteoriteEngine.Run();
+            _meteoriteRunner.Run();
         }
     }
 }

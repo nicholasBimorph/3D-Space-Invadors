@@ -10,10 +10,7 @@ public class PlayerSpaceShipMove : IPlayerSpaceShipMove
     private readonly Transform _transform;
     private float _maxSpeed;
     private float _maxSteerSpeed;
-    private readonly float _horizontalAxis;
-    private readonly float _verticalAxis;
-    private readonly float _pitch;
-    private readonly float _roll;
+
 
     /// <summary>
     ///     Determines the maximum speed this  <see cref="IPlayerSpaceShipMove" />
@@ -57,14 +54,6 @@ public class PlayerSpaceShipMove : IPlayerSpaceShipMove
     /// <param name="maxSpeed"></param>
     public PlayerSpaceShipMove(Transform transform, float maxSpeed, float maxSteerSpeed)
     {
-        _horizontalAxis = Input.GetAxis("Horizontal");
-
-        _verticalAxis = Input.GetAxis("Vertical");
-
-        _pitch = Input.GetAxis("PlayerShipPitch");
-
-        _roll = Input.GetAxis("PlayerShipRoll");
-
         _transform = transform;
 
         this.MaxSpeed = maxSpeed;
@@ -79,7 +68,7 @@ public class PlayerSpaceShipMove : IPlayerSpaceShipMove
     /// </summary>
     public void Propulsion()
     {
-        var delta = _transform.forward * (Time.deltaTime * this.MaxSpeed * _verticalAxis);
+        var delta = _transform.forward * (Time.deltaTime * this.MaxSpeed * Input.GetAxis("Vertical"));
 
         _transform.position += delta;
     }
@@ -90,11 +79,11 @@ public class PlayerSpaceShipMove : IPlayerSpaceShipMove
     /// </summary>
     public void Steer()
     {
-        float yaw = Time.deltaTime * _horizontalAxis * this.MaxSteerSpeed;
+        float yaw = Time.deltaTime * Input.GetAxis("Horizontal") * this.MaxSteerSpeed;
 
-        float pitch = Time.deltaTime * _pitch * this.MaxSteerSpeed;
+        float pitch = Time.deltaTime * Input.GetAxis("PlayerShipPitch") * this.MaxSteerSpeed;
 
-        float roll = Time.deltaTime * _roll * this.MaxSteerSpeed;
+        float roll = Time.deltaTime * Input.GetAxis("PlayerShipRoll") * this.MaxSteerSpeed;
 
         _transform.Rotate(pitch, yaw, roll);
 

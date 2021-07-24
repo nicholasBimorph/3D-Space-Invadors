@@ -7,14 +7,15 @@ using System.Threading.Tasks;
 namespace Assets.Scripts.Interfaces
 {
     /// <summary>
-    /// A contract which describes the behaviour of all
-    /// <see cref="IEnemy"/>'s in this game.
+    /// A contract for all engine implementations.
+    /// This <see cref="IRunner"/> computes the behaviour
+    /// of a particular collection of entities.
     /// </summary>
-    public interface IEnemy : IGameEntity
+    public interface IRunner
     {
         /// <summary>
-        /// 
+        /// Runs this <see cref="IRunner"/>.
         /// </summary>
-        void Follow();
+        void Run();
     }
 }
